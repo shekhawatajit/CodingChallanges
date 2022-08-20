@@ -6,7 +6,7 @@ namespace CodingChallenges
         public static void Main()
         {
             //Step 1: Represent multistage graph in 2d array. 
-            /* int[,] MultiStageGraph = {  {0,9,7,5,0,0,0,0,0,0,0,0},
+            int[,] MultiStageGraph = {  {0,9,7,5,0,0,0,0,0,0,0,0},
                                          {9,0,0,0,3,5,6,0,0,0,0,0},
                                          {7,0,0,0,0,4,5,7,0,0,0,0},
                                          {5,0,0,0,0,0,2,7,0,0,0,0},
@@ -18,19 +18,19 @@ namespace CodingChallenges
                                          {0,0,0,0,2,4,5,0,0,0,0,4},
                                          {0,0,0,0,0,8,3,7,0,0,0,2},
                                          {0,0,0,0,0,0,0,0,6,4,2,0}};
-             int stages = 5;
-             int vertex = 12;*/
-            int[,] MultiStageGraph = { {0,2,1,3,0,0,0,0},
-                                        {2,0,0,0,2,3,0,0},
-                                        {1,0,0,0,6,7,0,0},
-                                        {3,0,0,0,6,8,9,0},
-                                        {0,2,6,6,0,0,0,6},
-                                        {0,3,7,8,0,0,0,4},
-                                        {0,0,0,9,0,0,0,5},
-                                        {0,0,0,0,6,4,5,0}};
-            int stages = 4;
-            int vertex = 8;
-            //For storing cost of vertex, initialising with Maximum to start with
+            int stages = 5;
+            int vertex = 12;
+            /*     int[,] MultiStageGraph = { {0,2,1,3,0,0,0,0},
+                                              {2,0,0,0,2,3,0,0},
+                                              {1,0,0,0,6,7,0,0},
+                                              {3,0,0,0,6,8,9,0},
+                                              {0,2,6,6,0,0,0,6},
+                                              {0,3,7,8,0,0,0,4},
+                                              {0,0,0,9,0,0,0,5},
+                                              {0,0,0,0,6,4,5,0}};
+                  int stages = 4;
+                  int vertex = 8;*/
+            //For storing cost of vertex, initializing with Maximum to start with
             List<int> Cost = new List<int>(vertex);
             List<int> Distance = new List<int>(vertex);
             for (var item = 0; item < vertex; item++)
@@ -44,12 +44,12 @@ namespace CodingChallenges
             {
                 Path.Add(0);
             }
-            //we do not need to calculate starting point and finishing point becuase it is already decided
+            //we do not need to calculate starting point and finishing point because it is already decided
             Path[0] = 1;
             Path[stages - 1] = vertex;
 
             //Working for each vertex, we want to skip last vertex because its cost is 0 and no need to calculate
-            //that is whyloop started from vertex -2, (1 to skip last vertex, 1 for 0 based index)
+            //that is why loop started from vertex -2, (1 to skip last vertex, 1 for 0 based index)
             for (int i = vertex - 2; i >= 0; i--)
             {
                 int minimumCost = int.MaxValue;
@@ -82,7 +82,7 @@ namespace CodingChallenges
             Console.WriteLine("\nPath Array");
             for (var item = 0; item < stages; item++)
             {
-               Console.Write("{0} ",  Path[item]);
+                Console.Write("{0} ", Path[item]);
             }
         }
     }
