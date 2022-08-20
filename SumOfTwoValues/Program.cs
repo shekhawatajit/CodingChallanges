@@ -8,7 +8,6 @@ namespace CodingChallenges
             int targetSum = 10;
             List<int> arr = new List<int> { 5, 7, 1, 2, 8, 4, 3 };
 
-
             //Without any in-build function
             HashSet<int> myHash = new HashSet<int>();
             for (int index = 0; index < arr.Count(); index++)
